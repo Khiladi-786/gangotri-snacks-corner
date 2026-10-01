@@ -12,7 +12,17 @@ export const SignatureVisual: React.FC = () => {
           alt="Hotel Gangotri courtyard architecture"
           className="w-full h-full object-cover object-center scale-102"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-maroon-dark)]/95 via-[var(--color-maroon)]/85 to-[var(--color-maroon-dark)]/95" />
+        {/* Light Warm Overlay for High Image Visibility & Crisp Text Contrast */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `linear-gradient(
+              to bottom,
+              rgba(45, 18, 10, 0.42),
+              rgba(45, 18, 10, 0.48)
+            )`
+          }}
+        />
       </div>
 
       {/* Top Roof Divider */}
@@ -21,24 +31,36 @@ export const SignatureVisual: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-[750px] mx-auto px-6 text-center">
         {/* Thin Gold Decorative Line */}
-        <div className="w-16 h-0.5 bg-[var(--color-gold)] mx-auto mb-6" />
+        <div className="w-16 h-0.5 bg-[var(--color-gold)] opacity-90 mx-auto mb-6 shadow" />
 
-        <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-3 tracking-tight">
+        {/* Section Heading */}
+        <h2
+          className="font-serif text-3xl sm:text-5xl font-extrabold text-white mb-3 tracking-tight"
+          style={{ textShadow: '0 2px 8px rgba(0,0,0,0.75)' }}
+        >
           {restaurantData.signatureVisual.statement}
         </h2>
 
-        <p className="font-devanagari text-xl sm:text-2xl text-[var(--color-gold-light)] font-semibold mb-6">
+        {/* Marathi Heading: चव • परंपरा • आपुलकी */}
+        <p
+          className="font-devanagari text-2xl sm:text-3xl md:text-[32px] text-[#FFF8ED] font-bold mb-4 tracking-wide"
+          style={{ textShadow: '0 2px 8px rgba(0,0,0,0.75)' }}
+        >
           "{restaurantData.marathiTagline}"
         </p>
 
-        <p className="text-base sm:text-xl text-cream/90 font-normal max-w-2xl mx-auto leading-relaxed">
+        {/* English Description */}
+        <p
+          className="text-base sm:text-xl md:text-[22px] text-[#FFF8ED] font-medium leading-[1.6] max-w-[750px] mx-auto"
+          style={{ textShadow: '0 2px 8px rgba(0,0,0,0.75)' }}
+        >
           {restaurantData.signatureVisual.subtext}
         </p>
 
         {/* Thin Gold Decorative Line Bottom */}
-        <div className="w-16 h-0.5 bg-[var(--color-gold)] mx-auto mt-6" />
+        <div className="w-16 h-0.5 bg-[var(--color-gold)] opacity-90 mx-auto mt-6 shadow" />
       </div>
 
       {/* Bottom Roof Divider */}

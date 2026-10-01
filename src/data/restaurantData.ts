@@ -106,8 +106,8 @@ export const restaurantData: RestaurantConfig = {
   marathiTagline: "चव • परंपरा • आपुलकी",
   eyebrow: "AUTHENTIC MAHARASHTRIAN ROAD-SIDE DINING",
   sinceYear: 1987,
-  phone: "+917822017318",
-  formattedPhone: "+91 78220 17318",
+  phone: "+919307474925",
+  formattedPhone: "+91 93074 74925",
   address: {
     plusCode: "796Q+436",
     road: "Shirur-Sangavi Rd",

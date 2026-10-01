@@ -1,4 +1,3 @@
-
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { QuickInfoBar } from './components/QuickInfoBar';
@@ -10,6 +9,7 @@ import { PhotoGallery } from './components/PhotoGallery';
 import { ReviewsSection } from './components/ReviewsSection';
 import { LocationSection } from './components/LocationSection';
 import { FinalCTA } from './components/FinalCTA';
+import { FamilyLegacy } from './components/FamilyLegacy';
 import { Footer } from './components/Footer';
 import { MobileStickyBar } from './components/MobileStickyBar';
 
@@ -50,6 +50,9 @@ export function App() {
 
         {/* Final Immersive CTA */}
         <FinalCTA />
+
+        {/* Family Legacy & Developer Credit */}
+        <FamilyLegacy />
       </main>
 
       {/* Footer */}

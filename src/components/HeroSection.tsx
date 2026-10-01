@@ -14,28 +14,29 @@ export const HeroSection: React.FC = () => {
           className="w-full h-full object-cover object-center scale-102"
         />
         
-        {/* Balanced Left-to-Right Layered Gradient Overlay */}
+        {/* Layered Gradient Overlay (Strong behind left text area, fading to transparent right) */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 pointer-events-none"
           style={{
             background: `linear-gradient(
               90deg,
-              rgba(20, 8, 5, 0.75) 0%,
-              rgba(20, 8, 5, 0.50) 42%,
-              rgba(20, 8, 5, 0.20) 75%,
-              rgba(20, 8, 5, 0.08) 100%
+              rgba(20, 10, 6, 0.78) 0%,
+              rgba(20, 10, 6, 0.60) 32%,
+              rgba(20, 10, 6, 0.25) 58%,
+              rgba(20, 10, 6, 0.05) 80%,
+              rgba(20, 10, 6, 0) 100%
             )`
           }}
         />
 
-        {/* Subtle Bottom Gradient Overlay for Scroll Contrast */}
+        {/* Subtle Overall Bottom Gradient */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 pointer-events-none"
           style={{
             background: `linear-gradient(
               to top,
-              rgba(20, 8, 5, 0.60) 0%,
-              transparent 45%
+              rgba(20, 10, 6, 0.55) 0%,
+              rgba(20, 10, 6, 0) 45%
             )`
           }}
         />
@@ -43,55 +44,70 @@ export const HeroSection: React.FC = () => {
 
       {/* Main Left-Aligned Hero Content */}
       <div className="relative z-10 site-container my-auto">
-        <div className="max-w-2xl text-left">
+        <div className="max-w-xl lg:max-w-2xl text-left">
           
-          {/* Eyebrow SINCE 1987 Badge */}
+          {/* 1. SINCE 1987 Badge */}
           <div className="mb-4 inline-block">
             <HeritageBadge year={restaurantData.sinceYear} text="SINCE" />
           </div>
 
-          {/* Main Title: GANGOTRI */}
+          {/* 2. GANGOTRI Main Heading */}
           <h1
-            className="font-serif text-[clamp(3.5rem,6.5vw,6.5rem)] font-medium text-[#FFF8ED] leading-[0.95] tracking-[0.02em] mb-1 drop-shadow-[0_3px_14px_rgba(0,0,0,0.75)]"
+            className="font-serif text-[clamp(3.2rem,6.2vw,6.2rem)] font-bold text-[#FFF8ED] leading-[0.95] tracking-[0.02em] mb-1"
+            style={{
+              textShadow: '0 3px 12px rgba(0, 0, 0, 0.65), 0 4px 14px rgba(0, 0, 0, 0.35)'
+            }}
           >
             GANGOTRI
           </h1>
 
-          {/* Sub-Title: SNACKS CORNER */}
+          {/* 3. SNACKS CORNER Sub-Title */}
           <p
-            className="font-serif text-2xl sm:text-3xl text-[#F5D9A6] font-bold tracking-[0.25em] uppercase mb-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.65)]"
+            className="font-serif text-xl sm:text-2xl md:text-3xl text-[#F3D19A] font-semibold tracking-[0.2em] uppercase mb-4"
+            style={{
+              textShadow: '0 2px 5px rgba(0, 0, 0, 0.65)'
+            }}
           >
             SNACKS CORNER
           </p>
 
-          {/* Marathi Subtle Accent Line */}
+          {/* 4. MARATHI TAGLINE ("चव • परंपरा • आपुलकी") */}
           <p
-            className="font-devanagari text-lg sm:text-xl text-[#FFF8ED] font-medium mb-3 tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]"
+            className="font-devanagari text-lg sm:text-xl text-[#FFF8ED] font-medium mb-3 tracking-wide"
+            style={{
+              textShadow: '0 2px 5px rgba(0, 0, 0, 0.65)'
+            }}
           >
             "{restaurantData.marathiTagline}"
           </p>
 
-          {/* Headline: Good Food. Warm Hospitality. */}
+          {/* 5. MAIN SUPPORTING LINE ("Good Food. Warm Hospitality.") */}
           <h2
-            className="font-serif text-2xl sm:text-3xl md:text-4xl text-[#F0C77A] font-semibold mb-3 leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.65)]"
+            className="font-serif text-xl sm:text-2xl md:text-3xl text-[#F0C77A] font-semibold mb-3 leading-tight"
+            style={{
+              textShadow: '0 2px 5px rgba(0, 0, 0, 0.65), 0 4px 14px rgba(0, 0, 0, 0.35)'
+            }}
           >
             {restaurantData.hero.headline}
           </h2>
 
-          {/* Subheadline Description */}
+          {/* 6. DESCRIPTION ("A welcoming family restaurant on Shirur–Sangavi Road.") */}
           <p
-            className="text-sm sm:text-base md:text-lg text-[#FFF8ED]/90 font-normal max-w-xl mb-8 leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]"
+            className="text-base sm:text-lg text-[rgba(255,248,237,0.95)] font-normal max-w-[520px] mb-8 leading-relaxed"
+            style={{
+              textShadow: '0 2px 5px rgba(0, 0, 0, 0.65)'
+            }}
           >
             {restaurantData.hero.subheadline}
           </p>
 
-          {/* Action CTAs */}
+          {/* 7. Action CTAs */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-6">
             <a
               href={`tel:${restaurantData.phone}`}
               className="btn-terracotta py-3.5 px-8 text-sm shadow-2xl"
             >
-              <Phone className="w-4 h-4 text-[#F5D9A6]" />
+              <Phone className="w-4 h-4 text-[#F3D19A]" />
               <span>CALL NOW</span>
             </a>
 
@@ -106,8 +122,8 @@ export const HeroSection: React.FC = () => {
             </a>
           </div>
 
-          {/* Location Badge Line */}
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#FFF8ED]/85 tracking-widest uppercase bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/15 drop-shadow">
+          {/* Location Line */}
+          <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#FFF8ED]/90 tracking-widest uppercase bg-black/45 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/15 drop-shadow">
             <MapPin className="w-3.5 h-3.5 text-[#F0C77A]" />
             <span>{restaurantData.hero.locationBadge}</span>
           </div>
@@ -119,7 +135,8 @@ export const HeroSection: React.FC = () => {
       <div className="relative z-10 text-center pb-2">
         <a
           href="#info-bar"
-          className="inline-flex flex-col items-center gap-1 text-[10px] font-bold tracking-widest text-[#FFF8ED]/70 hover:text-[#F0C77A] transition-colors uppercase drop-shadow"
+          className="inline-flex flex-col items-center gap-1 text-[10px] font-bold tracking-widest text-[#FFF8ED]/80 hover:text-[#F0C77A] transition-colors uppercase"
+          style={{ textShadow: '0 2px 4px rgba(0,0,0,0.65)' }}
         >
           <span>SCROLL TO EXPLORE</span>
           <ChevronDown className="w-4 h-4 animate-bounce text-[#F0C77A]" />

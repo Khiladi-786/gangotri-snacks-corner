@@ -76,9 +76,12 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-cream/60 gap-4">
+        {/* Copyright & Credit */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-cream/60 gap-3">
           <p>© 2026 Gangotri Snacks Corner (Hotel Gangotri). All rights reserved.</p>
+          <p className="text-xs text-[var(--color-gold-light)]/80 font-medium">
+            Crafted with ♥ by Nikhil More
+          </p>
           <p className="font-devanagari text-cream/70">
             चव • परंपरा • आपुलकी
           </p>
